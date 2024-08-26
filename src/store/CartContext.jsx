@@ -11,15 +11,7 @@ const CartContext = createContext({
 //useReducer in React need a reducer function as a input
 //userReducer return update state and action object wil tell how to update this state
 function cartReducer(state, action){
-    if(action.type === 'ADD_ITEM'){
-        //Warning not be a good idea when update state like this: state.items.push(action.item);
-        //The first important: is we should never mutate existing state , bcs Push method will edit existing item array
-        //That already stored in memory that it would be changed state value before cartReducer executed done
-        //And if you have a code ex: return some other state under certain conditions you would change the items
-        //SO that you made a change before executed the code is may crack your data
-        //The second we don't want add new item into item array bcs if we click add to cart button multipie times , we don't want more 10 same items in array every click
-        //we need add the  once and then just increase quantity property that connected to the meal 
-        // so that we don't need the cart have 10 list with the same item instead we need 1 item but can increas quantity of 10. 
+    if(action.type === 'ADD_ITEM'){ 
         
         const existingCartItemIndex = state.items.findIndex(
                 (item) => item.id = action.item.id
