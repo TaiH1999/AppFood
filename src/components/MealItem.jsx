@@ -4,8 +4,7 @@ import Button from "./UI/Button";
 import CartContext from "../store/CartContext";
 
 export default function MealItem({meal}){
-    //Do use useContext we must past context object as a identifier
-    //not ContextProvider but instead Context object itself (default CartContext)       
+ //not ContextProvider but instead Context object itself (default CartContext)       
     const cartCtx = useContext(CartContext);
     
     function handleAddMealToCart(){
