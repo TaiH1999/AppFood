@@ -1,7 +1,6 @@
 import { createContext, useReducer } from "react";
 
 // context create by createContext in the end is the object has provide the property and has Provider property
-//then is a component can be output and should wrap any component that need to access to the contedxt
 const CartContext = createContext({
     items: [],
     addItem: (item) => {},
@@ -10,7 +9,7 @@ const CartContext = createContext({
 
 //useReducer in React need a reducer function as a input
 //userReducer return update state and action object wil tell how to update this state
-function cartReducer(state, action){
+function cartRedustate, action){
     if(action.type === 'ADD_ITEM'){ 
         
         const existingCartItemIndex = state.items.findIndex(
@@ -26,7 +25,6 @@ function cartReducer(state, action){
                 const existingItem = state.items[existingCartItemIndex];
                         //findIndex will return -1 as a value if not can't find items.
                     const updatedItem = {
-                        //That gices us a existing item in that item array
                     ...existingItem,
                     quantity: existingItem.quantity + 1,
                 }
